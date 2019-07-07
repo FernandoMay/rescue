@@ -14,6 +14,6 @@ public class MainActivity extends FlutterActivity {
     //Initialize client Push SDK
 
     MFPPush push = MFPPush.getInstance();
-    push.initialize(getApplicationContext(), "appGUID", "clientSecret");
+    push.initialize(getApplicationContext(), "81113842-b8e2-4a4b-8f6b-2f71ac382f5a", "c55280e7-b3ac-47ff-a7e2-ea778ee4a254");
   }
 }
