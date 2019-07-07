@@ -28,7 +28,27 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.pluvia.rescue.IBMPushNotification"/>
+                <category  android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+    
+            <service android:name="com.ibm.mobilefirstplatform.clientsdk.android.push.api.MFPPushIntentService"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+            </service>
+            <service
+            android:name="com.ibm.mobilefirstplatform.clientsdk.android.push.api.MFPPush"android:exported="true" >
+            <intent-filter>
+            <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+            </service>
+
         </activity>
+        <activity android:name="com.ibm.mobilefirstplatform.clientsdk.android.push.api.MFPPushNotificationHandler"
+   android:theme="@android:style/Theme.NoDisplay"/>
         <uses-permission android:name="android.permission.INTERNET"/>
         <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
         <uses-permission android:name="android.permission.WAKE_LOCK" />
